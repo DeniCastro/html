@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testejquery6</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+
+        .content {
+          max-width: 800px;
+          margin: auto;
+        }
+        .content, img {
+            text-align: center;
+            background: white;
+        }
+        </style>
+
+</head>
+
+<body>
+
+    <div class="content">
+
+        <h1>O JQuery pode manipular o DOM</h1>
+        <h2>DOM = Document Object Model (Modelo de Objeto de Documento)</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, soluta esse id eligendi iure perspiciatis ipsa aliquid ex iste hic.</p>
+    
+    
+        <input id="texto" type="text" placeholder="Digite algo">
+        <br><br>
+
+        <a id="link" href="https://google.com.br">Link para o Google</a>
+        <br><br>
+    
+        <img src="https://www.google.com.br/images/branding/googlelogo/2x/googlelogo_color_160x56dp.png">
+        <br><br>
+
+        <div id="teste">
+            <p>parágrafo</p>
+            <p>parágrafo</p>
+            <p>parágrafo</p>
+            <p>parágrafo</p>
+            <p>parágrafo</p>
+        </div>
+
+        <br><br><br>
+        <button id="botao1">Modificar Titulo h1</button><br><br>
+        <button id="botao2">Modificar Titulo h2</button><br><br>
+        <button id="botao3">Atribuir valor ao imput</button><br><br>
+        <button id="botao4">Trocar o link</button><br><br>
+        <button id="botao5">Trocar a imagem</button><br><br>
+        <button id="botao6">Deletar Título</button><br><br>
+        <button id="botao7">Esvaziar div</button><br><br>
+        <hr>
+        <button id="botao8">Adicionar Classe CSS</button><br><br>
+        <button id="botao9">Remover Classe CSS</button><br><br>    
+        <button id="botao10">Tamanho da Imagem</button><br><br>    
+    
+        <script src="js/jquery-3.6.0.min.js"></script>
+    
+        <script>
+            $(document).ready(function () {
+                $('#botao1').click(function () {
+                    $('h1').append(' Adicionei um texto com JQuery'); //prepend funciona
+                });
+                $('#botao2').click(function () {
+                    $('h2').html('<b>Mudei o h2</b> com <i>JQuery</i>');
+                });
+                $('#botao3').click(function () {
+                    $('#texto').val('Deni Castro');
+                });
+                $('#botao4').click(function () {
+                    $('#link').text('Ir para outro metodo de pesquisa')
+                    $('#link').attr('href', 'https://duckduckgo.com');
+                });
+                $('#botao5').click(function () {
+                    $('img').attr('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYLAfitdbkx7sz3C4LvJxxadftWQFLJprJ9Q&usqp=CAU');
+                });
+                $('#botao6').click(function () {
+                    $('h1').remove();
+                });
+                $('#botao7').click(function () {
+                    $('#teste').empty();
+                });
+                $('#botao8').click(function () {
+                    $('#link').addClass('red');
+                });
+                $('#botao9').click(function () {
+                    $('#link').removeClass('red');
+                });
+                $('#botao10').click(function () {
+                    var larguraImg = $('img').width();
+                    var alturaImg = $('img').height();
+                    alert('A largura da imagem é ' + larguraImg + "px e a altura: " + alturaImg + "px");
+                });
+            });
+        </script>
+    </div>
+
+
+
+</body>
+</html>
