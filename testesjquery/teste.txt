@@ -1,0 +1,5 @@
+<h2> Ajax is very cool </h2>
+<p> This content has ben pulled from an external file </p>
+<script>
+alert('Alert loaded from outside')
+</script>
